@@ -10,7 +10,7 @@ This repository contains a robust, unsupervised, and regularized boundary correc
 Since ground-truth files (`example_truths.geojson`) are not available for hidden evaluation villages, the pipeline estimates the global translation vector $(dx_{global}, dy_{global})$ using the village plots themselves:
 - **Sampling**: Randomly samples 100 plots from the cadastre.
 - **Coarse Search**: Searches a wide window ($\pm 15$ meters with 3m steps) by rasterizing plot boundaries and cross-correlating them with the `boundaries.tif` raster.
-- **Global prior**: A Gaussian prior centered at $(0, 0)$ with $\sigma_{global} = 15.0$m is applied to avoid snapping to distant parallel crop-field boundary aliases.
+- **Global prior**: A Gaussian prior centered at $(0, 0)$ with $\sigma_{global} = 15.0\,\text{m}$ is applied to avoid snapping to distant parallel crop-field boundary aliases.
 - **Fine Search**: Searches a tight window ($\pm 2.5$ meters with 0.5m steps) around the coarse peak to refine the shift.
 
 ### 2. Local Cross-Correlation Alignment
